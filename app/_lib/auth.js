@@ -1,5 +1,5 @@
 import NextAuth from "next-auth";
-import Google from "next-auth/providers/googles";
+import Google from "next-auth/providers/google";
 
 const authConfig = {
   providers: [
@@ -9,3 +9,8 @@ const authConfig = {
     }),
   ],
 };
+
+export const {
+  auth,
+  handlers: { GET, POST },
+} = NextAuth(authConfig);
